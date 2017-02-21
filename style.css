@@ -1,0 +1,226 @@
+body{
+	color: #212121;
+	font-family: 'Lato',sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header{
+
+}
+
+h1,h2,h3,h4,h5,h6{
+margin-bottom: 5px;
+margin-top: 0;
+
+}
+
+ol,ul{
+
+	margin: 0; /*to clear defaults*/
+	padding: 0;
+list-style-type: none;
+
+
+}
+
+
+
+p{
+
+
+}
+
+a{
+  color: #ff4081;
+  transition :0.2s ease-in-out ;
+}
+
+a:active,a:hover,a:focus{
+
+color: #212121;
+}
+
+.hero{
+	background-color: #3f52b5;
+	padding: 20px 0; /*creates space inside between elements*/
+	/*margin: 40px;*/ /*creates space outside between*/
+	text-align: center;
+	/*max-width: 800px;*/
+	margin-bottom: 40px;
+	
+	color: white;
+	 /*everything inside this will be white , for eg ,paragraph here .*/
+}
+
+.logo{
+	font-size: 34px;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.news-item{
+
+border-bottom: 1px solid #b6b6b6;
+margin-bottom: 20px;
+padding-bottom: 20px;
+text-align: center;
+/*max-width: 800px;
+	margin: 0 auto;*/
+
+}
+
+.news-item:last-child{
+	border-bottom: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+
+.news-link{
+	color: #3f52b5;
+	font-size: 24px;
+	margin-bottom: 10px;
+	display: block;
+
+
+}
+
+.content{
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.container{
+	margin: 0 auto;
+	max-width: 800px;
+}
+
+.news-meta-item{
+	display: inline;
+	margin-right: 15px;
+}
+.content{
+	margin-bottom: 40px;
+}
+.is-liked{
+	animation:flash 2s ;
+
+}
+
+
+
+.form{
+	height: 0;
+	/*to hide the element .it is hidden ,but still there is a space, so we will use height:0 to make it disappear*/
+	margin-bottom: 20px;
+	opacity: 0;
+
+	visibility: hidden;
+}
+
+.form.is-visible{
+	/*dont keep space between 2 classes*/
+	opacity: 1;
+	visibility: visible;
+	transition:opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+	height: auto;
+	/*to show the form again*/
+
+}
+
+.form-label{
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+.form-input{
+	border: 1px solid #b6b6b6;
+	border-radius: 4px;
+	padding: 10px;
+	width: 100%;
+	font-size: 20px;
+	box-sizing:border-box;
+	/*we can see box in inspect element and change the things according to that.for example padding ,margin*/
+}
+
+.modal{
+	position: absolute;
+	border-bottom-left-radius:4px ;
+	border-bottom-right-radius: 4px;
+	background-color: #fff;
+	opacity: 0;
+	visibility: hidden;
+	/*we have to hide this and will show this later*/
+	box-shadow: 0 2px 6px rgba(0,0,0,0.75);
+	z-index: 2;
+	width: 500px;
+	left: 50%;
+	transition :0.4s ease-in-out;
+	transform:translate(-50%,5%);
+	/*the left and transform are used to keep image in centre.or there is one more option.keep margin half of width */
+	/*margin: 250px;*/
+	 /*keep margin half of width*/
+
+}
+
+
+.modal.is-visible{
+	opacity: 1;
+	visibility: visible;
+	transform : translate(-50%,0);
+
+}
+.modal-media{
+	position: relative;
+}
+
+.modal-meida-title{
+	color: #fff;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	font-size: 28px;
+	
+}
+
+.modal-content{
+	padding: 20px;
+}
+
+.modal-overlay{
+background-color: #212121;
+/*position: absolute;*/
+position: fixed;
+left: 0;
+bottom: 0;
+right: 0;
+top: 0;
+height: 100%;
+width: 100%;
+transition:0.4s ease-in-out;
+opacity: 0;
+visibility: hidden;
+/*to hide*/
+z-index: 1;
+/*we use z-index:  because when we keep position:absolute pages doesnt know where to go , solid
+so by writing z-index we tell them that u have to be in front or wherever;*/
+}
+
+
+.modal-overlay.is-visible{
+	opacity: 0.4;
+	visibility: visible;
+}
+
+@keyframes flash{
+	from , 50% , to {
+		opacity: 0;
+
+	}
+
+	25%,75% {
+		opacity: 1;
+	}
+}
